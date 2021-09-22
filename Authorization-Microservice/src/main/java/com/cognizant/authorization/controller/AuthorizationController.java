@@ -62,8 +62,8 @@ public class AuthorizationController {
 			res.setValid(false);
 			return new ResponseEntity<>(res, HttpStatus.OK);
 		} else {
-		//	String token1 = token.substring(7);
-			String token1 = new String(token);
+			String token1 = token.substring(7);
+			// String token1 = new String(token);
 			if (jwtUtil.validateToken(token1)) {
 				res.setUserId(jwtUtil.extractUsername(token1));
 				res.setValid(true);
