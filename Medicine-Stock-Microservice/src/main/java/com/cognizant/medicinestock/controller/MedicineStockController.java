@@ -34,6 +34,7 @@ public class MedicineStockController {
 		return ResponseEntity.ok(medicineStockService.findByTargetAilment(treatingAilment));
 	}
 
+	
 	@PostMapping("/getStockCount/{medicine}")
 	public ResponseEntity<MedicineStock> getStockCountForMedicine(@PathVariable("medicine") String medicine)
 			throws MedicineNotFoundException {
