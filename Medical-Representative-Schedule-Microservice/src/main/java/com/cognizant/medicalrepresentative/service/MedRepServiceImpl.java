@@ -5,11 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cognizant.medicalrepresentative.dao.MedicalRepresentativeRepository;
 import com.cognizant.medicalrepresentative.exception.TokenValidationFailedException;
 import com.cognizant.medicalrepresentative.feignclient.AuthenticationFeignClient;
 import com.cognizant.medicalrepresentative.model.JwtResponse;
 import com.cognizant.medicalrepresentative.model.MedicalRepresentative;
+import com.cognizant.medicalrepresentative.repository.MedicalRepresentativeRepository;
 
 @Service
 public class MedRepServiceImpl implements MedRepService {
