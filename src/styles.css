@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
+/*@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css');*/
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js');
+@import url('https://use.fontawesome.com/releases/v5.7.0/css/all.css');
+
+body {
+    background: linear-gradient(to right, #ff7e00
+    , #8cc63e
+    );
+    min-height: 100vh
+}
+
+strong {
+    color: #490b70;
+    font-weight: bold;
+
+}
