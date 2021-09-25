@@ -5,5 +5,5 @@ export class MedicineStock {
 	dateOfExpiry:String;
 	numberOfTabletsInStock:Number;
 	pharmacyName:String;
-    amount:Number;
+	amount:Number;
 }

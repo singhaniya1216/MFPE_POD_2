@@ -10,6 +10,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { NavDesignComponent } from './nav-design/nav-design.component';
 import { OrderMedicineComponent } from './order-medicine/order-medicine.component';
+import { SupplyTableComponent } from './supply-table/supply-table.component';
+import { DemandTableComponent } from './demand-table/demand-table.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { OrderMedicineComponent } from './order-medicine/order-medicine.componen
     HomePageComponent,
     ScheduleComponent,
     NavDesignComponent,
-    OrderMedicineComponent
+    OrderMedicineComponent,
+    SupplyTableComponent,
+    DemandTableComponent
   ],
   imports: [
     BrowserModule,
