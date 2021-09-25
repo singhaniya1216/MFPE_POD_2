@@ -1,3 +1,4 @@
+import { Time } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../login.service';
@@ -11,26 +12,32 @@ import { RepresentativeSchedule } from '../representative-schedule';
 export class ScheduleComponent implements OnInit {
 
   submitted = false;
-  repSchs:RepresentativeSchedule[];
+  repSchs: RepresentativeSchedule[];
 
-  scheduleDate:String;
-  constructor(private loginservice: LoginService, private router: Router) { }
+  today:Date = new Date();
+  time:Time;
+  minDate:String = this.today.getDate().toString();;
 
-  ngOnInit(): void {
-  }
-  
-  onSubmit(){
-    console.log(this.scheduleDate);
-    this.getSchedule();
-  }
-  getSchedule() {
-    this.loginservice.repSchedule(LoginService.token,this.scheduleDate).subscribe(
-      data =>{
-        this.repSchs= data;
-        console.log(this.repSchs);
-        this.submitted = true;
-      },
-      error => console.log(error));
-  }
+scheduleDate: String;
+constructor(private loginservice: LoginService, private router: Router) {
+}
+
+ngOnInit(): void {
+}
+
+onSubmit(form: any){
+  this.scheduleDate = form.scheduleDate;
+  console.log(this.scheduleDate);
+  this.getSchedule();
+}
+getSchedule() {
+  this.loginservice.repSchedule(LoginService.token, this.scheduleDate).subscribe(
+    data => {
+      this.repSchs = data;
+      console.log(this.repSchs);
+      this.submitted = true;
+    },
+    error => console.log(error));
+}
 
 }
