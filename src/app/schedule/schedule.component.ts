@@ -16,10 +16,12 @@ export class ScheduleComponent implements OnInit {
 
   today:Date = new Date();
   time:Time;
-  minDate:String = this.today.getDate().toString();;
+  minDate:string = this.today.getFullYear().toString()+'-0'+(this.today.getMonth()+1)+'-'+this.today.getDate().toString();
+
 
 scheduleDate: String;
 constructor(private loginservice: LoginService, private router: Router) {
+  console.log(this.minDate);
 }
 
 ngOnInit(): void {

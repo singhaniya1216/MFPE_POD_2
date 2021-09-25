@@ -27,7 +27,9 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit() {
+  onSubmit(form: any) {
+    this.usercredentials.userId = form.userid;
+    this.usercredentials.password = form.password;
     console.log(this.usercredentials);
     this.login();
   }

@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { JwtReponse } from './jwt-reponse';
+import { MedicineStock } from './medicine-stock';
 import { RepresentativeSchedule } from './representative-schedule';
 import { UserToken } from './user-token';
 import { Usercredentials } from './usercredentials';
@@ -34,5 +35,9 @@ export class LoginService {
   {
     const headers = new HttpHeaders().set('Authorization', "Bearer "+token).set('Access-Control-Allow-Origin', '*');
     return this.httpClient.get<RepresentativeSchedule[]>(`${this.baseURL}/RepSchedule/${date}`, {headers});
+  }
+  stock() : Observable<MedicineStock[]>
+  {
+    return this.httpClient.get<MedicineStock[]>(`${this.baseURL}/MedicineStockInformation`);
   }
 }

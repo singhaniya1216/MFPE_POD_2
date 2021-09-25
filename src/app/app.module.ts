@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { NavDesignComponent } from './nav-design/nav-design.component';
+import { OrderMedicineComponent } from './order-medicine/order-medicine.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NavDesignComponent } from './nav-design/nav-design.component';
     LoginPageComponent,
     HomePageComponent,
     ScheduleComponent,
-    NavDesignComponent
+    NavDesignComponent,
+    OrderMedicineComponent
   ],
   imports: [
     BrowserModule,

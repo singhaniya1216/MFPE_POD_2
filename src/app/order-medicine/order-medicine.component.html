@@ -1,0 +1,55 @@
+<body>
+    <app-nav-design></app-nav-design>
+    <div class="container text-center text-white">
+        <div class="row pt-5">
+            <div class="col-lg-8 mx-auto">
+                <h1 class="display-4"><strong>Order Medicines</strong></h1>
+            </div>
+        </div>
+    </div><!-- End -->
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-12 mx-auto bg-white rounded shadow">
+
+                <!-- Fixed header table-->
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered table-light" style="border-color:black;">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="col-2">Medicine Name</th>
+                                <th scope="col" class="col-3">Chemical Composition</th>
+                                <th scope="col" class="col-2">Targer Ailment</th>
+                                <th scope="col" class="col-2">Date of Expiry</th>
+                                <th scope="col" class="col-0">In Stock</th>
+                                <th scope="col" class="col-2">Pharmacy Name</th>
+                                <th scope="col" class="col-1">Order Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let medicine of medicines">
+                                <td class="col-2">{{medicine.name}}</td>
+                                <td class="col-3">{{medicine.chemicalComposition}}</td>
+                                <td class="col-2">{{medicine.targetAilment}}</td>
+                                <td class="col-2">{{medicine.dateOfExpiry}}</td>
+                                <td class="col-0">{{medicine.numberOfTabletsInStock}}</td>
+                                <td class="col-2">{{medicine.pharmacyName}}</td>
+                                <td class="col-1"><input type="number" id="amount" value=0 name="amount" max="{{medicine.numberOfTabletsInStock}}" class="form-control border border-secondary" required></td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div><!-- End -->
+
+            </div>
+        </div>
+        
+    </div>
+    <div class="container text-white text-lg-center">
+    <button type="submit" class="btn btn-primary text-uppercase btn-lg">Place Order</button>
+    
+        <div class="row pt-lg-5">
+            <div class="col-lg-8 mx-auto">
+            </div>
+        </div>
+    </div><!-- End -->
+</body>
