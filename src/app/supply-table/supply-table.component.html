@@ -1,45 +1,47 @@
 <body>
     <app-nav-design></app-nav-design>
-<div class="container text-center text-white">
-<div class="row pt-5">
-    <div class="col-lg-8 mx-auto">
-        <h1 class="display-4"><strong>Medicines Supplied</strong></h1>
-    </div>
-</div>
-</div><!-- End -->
-<div class="container py-5">
-    <div class="row">
-        <div class="col-lg-9 mx-auto bg-white rounded shadow">
+    <div class="container text-center text-white">
+        <div class="row pt-5">
+            <div class="col-lg-8 mx-auto">
+                <h1 class="display-4"><strong>Medicines Supplied</strong></h1>
+            </div>
+        </div>
+    </div><!-- End -->
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-9 mx-auto bg-white rounded shadow">
 
-            <!-- Fixed header table-->
-            <div class="table-responsive" style="padding-top: 12px;">
-                <table class="table table-hover table-bordered table-striped bg-light rounded" style="border-color:black;">
-                    <thead>
-                        <tr class=" text-center bg-secondary text-white">
-                            <th scope="col" class="col-3">Pharmacy Name</th>
-                            <th scope="col" class="col-3">Medicine Name</th>
-                            <th scope="col" class="col-2">Ordered Amount</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let product of supply">
-                            <td class="col-3">{{product.pharmacyName}}</td>
-                            <td class="col-3">{{product.medicineName}}</td>
-                            <td class="col-2">{{product.supplyCount}}</td>
-                        </tr>
-                    </tbody>
+                <!-- Fixed header table-->
+                <div class="table-responsive" style="padding-top: 12px;">
+                    <table class="table table-hover table-bordered table-striped bg-light rounded"
+                        style="border-color:black;">
+                        <thead>
+                            <tr class=" text-center bg-secondary text-white">
+                                <th scope="col" class="col-3">Pharmacy Name</th>
+                                <th scope="col" class="col-3">Medicine Name</th>
+                                <th scope="col" class="col-2">Ordered Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let product of supply">
+                                <td class="col-3">{{product.pharmacyName}}</td>
+                                <td class="col-3">{{product.medicineName}}</td>
+                                <td class="col-2">{{product.supplyCount}}</td>
+                            </tr>
+                        </tbody>
 
-                </table>
-            </div><!-- End -->
+                    </table>
+                </div><!-- End -->
 
+            </div>
+        </div>
+        <div class="container py-4 text-white text-lg-center">
+            <button routerLink="/home" class="btn btn-primary text-uppercase btn-lg">Home</button>
         </div>
     </div>
-</div>
-<div class="container text-white text-lg-center">
-    <button routerLink="/home" class="btn btn-primary text-uppercase btn-lg">Home</button>
-</div>
-<div class="row pt-lg-5">
-    <div class="col-lg-8 mx-auto">
-    </div>
-</div>
 </body>
+<footer class="py-2 bg-white" style="opacity: 0.7;">
+    <div class="container px-4 px-lg-5">
+        <p class="m-0 text-center text-black">Copyright &copy; POD-2 2021</p>
+    </div>
+</footer>

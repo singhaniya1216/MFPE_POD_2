@@ -1,17 +1,63 @@
 <body>
-    <app-nav-design></app-nav-design>
-    <div [hidden]="submitted">
-        <div class="container text-center text-white">
-            <div class="row pt-5">
-                <div class="col-lg-8 mx-auto">
-                    <h1 class="display-4"><strong>Order Medicines</strong></h1>
+    <div [hidden]="error">
+        <app-nav-design></app-nav-design>
+        <div [hidden]="submitted">
+            <div class="container text-center text-white">
+                <div class="row pt-5">
+                    <div class="col-lg-8 mx-auto">
+                        <h1 class="display-4"><strong>Order Medicines</strong></h1>
+                    </div>
                 </div>
-            </div>
-        </div><!-- End -->
-        <form (ngSubmit)="onSubmit()">
+            </div><!-- End -->
+            <form (ngSubmit)="onSubmit()">
+                <div class="container py-5">
+                    <div class="row">
+                        <div class="col-lg-7 mx-auto bg-white rounded shadow my-auto">
+
+                            <!-- Fixed header table-->
+                            <div class="table-responsive" style="padding-top: 12px;">
+                                <table class="table table-hover table-bordered table-striped bg-light rounded"
+                                    style="border-color:black;">
+                                    <thead>
+                                        <tr class=" text-center bg-secondary text-white">
+                                            <th scope="col" class="col-3">Medicine Name</th>
+                                            <th scope="col" class="col-2">Order Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let medicine of medicines">
+                                            <td class="col-3">{{medicine.name}}</td>
+                                            <td class="col-2"><input type="number" id="amount" name="amount"
+                                                    max="{{medicine.numberOfTabletsInStock}}" min=0
+                                                    [(ngModel)]="medicine.amount"
+                                                    class="form-control border border-secondary" required></td>
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+                            </div><!-- End -->
+
+                        </div>
+                    </div>
+                    <div class="container py-4 text-white text-lg-center">
+                        <button type="submit" class="btn btn-primary text-uppercase btn-lg">Place Order</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+        <div [hidden]="!submitted">
+            <div class="container text-center text-white">
+                <div class="row pt-5">
+                    <div class="col-lg-8 mx-auto">
+                        <h1 class="display-4"><strong>Order Placed</strong></h1>
+                    </div>
+                </div>
+            </div><!-- End -->
             <div class="container py-5">
                 <div class="row">
-                    <div class="col-lg-7 mx-auto bg-white rounded shadow my-auto">
+                    <div class="col-lg-7 mx-auto bg-white rounded shadow">
 
                         <!-- Fixed header table-->
                         <div class="table-responsive" style="padding-top: 12px;">
@@ -20,16 +66,13 @@
                                 <thead>
                                     <tr class=" text-center bg-secondary text-white">
                                         <th scope="col" class="col-3">Medicine Name</th>
-                                        <th scope="col" class="col-2">Order Amount</th>
+                                        <th scope="col" class="col-2">Ordered Amount</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let medicine of medicines">
-                                        <td class="col-3">{{medicine.name}}</td>
-                                        <td class="col-2"><input type="number" id="amount" name="amount"
-                                                max="{{medicine.numberOfTabletsInStock}}" min=0
-                                                [(ngModel)]="medicine.amount"
-                                                class="form-control border border-secondary" required></td>
+                                    <tr *ngFor="let product of supply">
+                                        <td class="col-3">{{product.medicineName}}</td>
+                                        <td class="col-2">{{product.supplyCount}}</td>
                                     </tr>
                                 </tbody>
 
@@ -38,62 +81,33 @@
 
                     </div>
                 </div>
-
-            </div>
-            <div class="container text-white text-lg-center">
-                <button type="submit" class="btn btn-primary text-uppercase btn-lg">Place Order</button>
-            </div>
-        </form>
-        <div class="row pt-lg-5">
-            <div class="col-lg-8 mx-auto">
+                <div class="container py-4 text-white text-lg-center">
+                    <button routerLink="/home" class="btn btn-primary text-uppercase btn-lg">Home</button>
+                </div>
             </div>
         </div>
     </div>
 
-
-    <div [hidden]="!submitted">
-        <div class="container text-center text-white">
+    <div [hidden]="!error">
+        <div class="container py-5 text-center text-white">
             <div class="row pt-5">
-                <div class="col-lg-8 mx-auto">
-                    <h1 class="display-4"><strong>Order Details</strong></h1>
+                <div class="col-lg-12 mx-auto">
+                    <span><i class="fas fa-exclamation-triangle fa-9x" style="color:#69387a;"></i></span>
+                    <h1 class="display-2" style="margin-bottom: 20px;"><strong>Medicine out of Stock</strong></h1>
+                    <h1 class="display-6" style="margin-bottom: 15px;"><strong>Try again with less quantity</strong>
+                    </h1>
+                    <h4 class="display-6" style="margin-bottom: 20px;">Maybe the medicines selected are not available in
+                        given quantity. Check the Medinice Stock before ordering</h4>
                 </div>
             </div>
-        </div><!-- End -->
-        <div class="container py-5">
-            <div class="row">
-                <div class="col-lg-12 mx-auto bg-white rounded shadow">
-
-                    <!-- Fixed header table-->
-                    <div class="table-responsive" style="padding-top: 12px;">
-                        <table class="table table-hover table-bordered table-striped bg-light rounded"
-                            style="border-color:black;">
-                            <thead>
-                                <tr class=" text-center bg-secondary text-white">
-                                    <th scope="col" class="col-3">Pharmacy Name</th>
-                                    <th scope="col" class="col-3">Medicine Name</th>
-                                    <th scope="col" class="col-2">Ordered Amount</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr *ngFor="let product of supply">
-                                    <td class="col-3">{{product.pharmacyName}}</td>
-                                    <td class="col-3">{{product.medicineName}}</td>
-                                    <td class="col-2">{{product.supplyCount}}</td>
-                                </tr>
-                            </tbody>
-
-                        </table>
-                    </div><!-- End -->
-
-                </div>
-            </div>
-        </div>
-        <div class="container text-white text-lg-center">
-            <button routerLink="/home" class="btn btn-primary text-uppercase btn-lg">Home</button>
-        </div>
-        <div class="row pt-lg-5">
-            <div class="col-lg-8 mx-auto">
+            <div class="container text-white text-lg-center">
+                <button routerLink="/Stock" class="btn btn-primary text-uppercase btn-lg">Medicine Details</button>
             </div>
         </div>
     </div>
 </body>
+<footer class="py-2 bg-white" style="opacity: 0.7;">
+    <div class="container px-4 px-lg-5">
+        <p class="m-0 text-center text-black">Copyright &copy; POD-2 2021</p>
+    </div>
+</footer>

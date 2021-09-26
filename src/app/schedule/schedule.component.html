@@ -1,6 +1,7 @@
 <body>
     <app-nav-design></app-nav-design>
 
+    <div>
     <div class="my-container" [hidden]="submitted">
         <div class="container py-5">
             <header class="text-center">
@@ -19,7 +20,7 @@
                                 <input ngModel  type="text" onblur="(this.type='text')" onfocus="(this.type='date')" placeholder="Choose a date for Schedule" min="{{minDate|date:'yyyy-MM-dd'}}"
                                     class="form-control py-4 px-4" id="scheduleDate" name="scheduleDate" #scheduleDate="ngModel" required>
                             </div>
-                            <div [hidden]="scheduleDate.valid || scheduleDate.pristine" class="alert alert-danger">
+                            <div [hidden]="scheduleDate.valid || scheduleDate.pristine" style="margin: 10px;" class="alert alert-danger">
                                 Date is required and need to be correct</div>
                         </div>
                         <button type="submit" [disabled]="!dateForm.form.valid"
@@ -80,5 +81,10 @@
             </div>
         </div>
     </div>
-
+    </div>
 </body>
+<footer class="py-2 bg-white" style="opacity: 0.7;">
+    <div class="container px-4 px-lg-5">
+        <p class="m-0 text-center text-black">Copyright &copy; POD-2 2021</p>
+    </div>
+</footer>

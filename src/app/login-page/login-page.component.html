@@ -14,6 +14,9 @@
                         <div class="col-lg-10 col-xl-7 mx-auto">
                             <h3 class="display-4">Login!</h3>
                             <p class="text-muted mb-4">Pharmacy Supply Portal</p>
+                            <div [hidden]="!error"
+                                        class="alert alert-danger">
+                                        Invalid User Id or Password</div>
                             <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
                                 <div class="form-group mb-3">
                                     <input id="userid" name="userid" ngModel type="text" placeholder="User ID"

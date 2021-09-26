@@ -14,6 +14,7 @@ import { SupplyTableComponent } from './supply-table/supply-table.component';
 import { DemandTableComponent } from './demand-table/demand-table.component';
 import { StockViewComponent } from './stock-view/stock-view.component';
 import { ExpiredSessionComponent } from './expired-session/expired-session.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ExpiredSessionComponent } from './expired-session/expired-session.compo
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,48 +1,52 @@
 <body>
     <app-nav-design></app-nav-design>
 
-        <div class="container text-center text-white">
-            <div class="row pt-5">
-                <div class="col-lg-8 mx-auto">
-                    <h1 class="display-4"><strong>Medicine Stock</strong></h1>
-                </div>
+    <div class="container text-center text-white">
+        <div class="row pt-5">
+            <div class="col-lg-12 mx-auto">
+                <h1 class="display-4"><strong>Medicine Details and Stock Available</strong></h1>
             </div>
-        </div><!-- End -->
+        </div>
+    </div><!-- End -->
 
-            <div class="container py-5">
-                <div class="row">
-                    <div class="col-lg-12 mx-auto bg-white rounded shadow">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-12 mx-auto bg-white rounded shadow">
 
-                        <!-- Fixed header table-->
-                        <div class="table-responsive" style="padding-top: 12px;">
-                            <table class="table table-hover table-bordered table-striped bg-light rounded" style="border-color:black;">
-                                <thead>
-                                    <tr class=" text-center bg-secondary text-white">
-                                        <th scope="col" class="col-2">Medicine Name</th>
-                                        <th scope="col" class="col-3">Chemical Composition</th>
-                                        <th scope="col" class="col-2">Targer Ailment</th>
-                                        <th scope="col" class="col-2">Date of Expiry</th>
-                                        <th scope="col" class="col-1">In Stock</th>
-                                        <th scope="col" class="col-2">Pharmacy Name</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let medicine of medicines">
-                                        <td class="col-2">{{medicine.name}}</td>
-                                        <td class="col-3">{{medicine.chemicalComposition}}</td>
-                                        <td class="col-2">{{medicine.targetAilment}}</td>
-                                        <td class="col-2">{{medicine.dateOfExpiry}}</td>
-                                        <td class="col-1">{{medicine.numberOfTabletsInStock}}</td>
-                                        <td class="col-2">{{medicine.pharmacyName}}</td>
-                                    </tr>
-                                </tbody>
+                <!-- Fixed header table-->
+                <div class="table-responsive" style="padding-top: 12px;">
+                    <table class="table table-hover table-bordered table-striped bg-light rounded"
+                        style="border-color:black;">
+                        <thead>
+                            <tr class=" text-center bg-secondary text-white">
+                                <th scope="col" class="col-2">Medicine Name</th>
+                                <th scope="col" class="col-4">Chemical Composition</th>
+                                <th scope="col" class="col-2">Targer Ailment</th>
+                                <th scope="col" class="col-2">Date of Expiry</th>
+                                <th scope="col" class="col-1">In Stock</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let medicine of medicines">
+                                <td class="col-2">{{medicine.name}}</td>
+                                <td class="col-4">{{medicine.chemicalComposition}}</td>
+                                <td class="col-2">{{medicine.targetAilment}}</td>
+                                <td class="col-2">{{medicine.dateOfExpiry}}</td>
+                                <td class="col-1">{{medicine.numberOfTabletsInStock}}</td>
+                            </tr>
+                        </tbody>
 
-                            </table>
-                        </div><!-- End -->
-
-                    </div>
-                </div>
+                    </table>
+                </div><!-- End -->
 
             </div>
+        </div>
+
+    </div>
 
 </body>
+<footer class="py-2 bg-white" style="opacity: 0.7;">
+    <div class="container px-4 px-lg-5">
+        <p class="m-0 text-center text-black">Copyright &copy; POD-2 2021</p>
+    </div>
+</footer>

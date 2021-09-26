@@ -17,6 +17,8 @@ export class LoginPageComponent implements OnInit {
   usertoken: UserToken = new UserToken();
   jwt: JwtReponse = new JwtReponse();
 
+  error = false;
+
   constructor(private loginservice: LoginService,
     private router: Router) {
       this.check(LoginService.token);
@@ -43,7 +45,10 @@ export class LoginPageComponent implements OnInit {
         console.log(LoginService.token);
         this.validate(LoginService.token);
       },
-      error => console.log(error));
+      error => {
+        console.log(error)
+        this.error = true;
+      });
   }
 
 

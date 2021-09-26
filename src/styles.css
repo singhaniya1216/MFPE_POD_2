@@ -1,78 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+
 @import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 @import url('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
-/*@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css');*/
 @import url('https://use.fontawesome.com/releases/v5.7.0/css/all.css');
 
 body {
     background: linear-gradient(to right, #ff7e00
     , #8cc63e
     );
-    min-height: 100vh
+    min-height: 100vh;
+    width:100%;
 }
 
 strong {
     color: #490b70;
     font-weight: bold;
-
 }
-
-.table-fixed tbody {
-    height: 300px;
-    overflow-y: auto;
-    width: 100%;
-}
-
-.table-fixed thead,
-.table-fixed tbody,
-.table-fixed tr,
-.table-fixed td,
-.table-fixed th {
-    display: block;
-}
-
-.table-fixed tbody td,
-.table-fixed tbody th,
-.table-fixed thead > tr > th {
-    float: left;
-    position: relative;
-}
-.datepicker td, .datepicker th {
-    width: 2.5rem;
-    height: 2.5rem;
-    font-size: 0.85rem;
-}
-
-.datepicker {
-    margin-bottom: 3rem;
-}
-
-input{
-    border-radius: 30rem;
-}
-
-.input-group {
-    border-radius: 30rem;
-}
-
-input.form-control {
-    border-radius: 30rem;
-    border: none;
-}
-
-input.form-control:focus {
-    box-shadow: none;
-}
-
-input.form-control::placeholder {
-    font-style: italic;
-}
-
-.input-group-text {
-    border-radius: 30rem;
-    border: none;
-}
-
-.datepicker-dropdown {
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+footer{
+    vertical-align: bottom;
 }
