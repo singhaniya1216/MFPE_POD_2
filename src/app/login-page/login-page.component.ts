@@ -16,15 +16,14 @@ export class LoginPageComponent implements OnInit {
   usercredentials: Usercredentials = new Usercredentials();
   usertoken: UserToken = new UserToken();
   jwt: JwtReponse = new JwtReponse();
-  token: String = "";
 
-  logined:Boolean;
   constructor(private loginservice: LoginService,
     private router: Router) {
-      this.validate(LoginService.token);
-     }
+      this.check(LoginService.token);
+  }
 
   ngOnInit(): void {
+    this.check(LoginService.token);
   }
 
   onSubmit(form: any) {
@@ -33,6 +32,7 @@ export class LoginPageComponent implements OnInit {
     console.log(this.usercredentials);
     this.login();
   }
+
   login() {
     this.loginservice.login(this.usercredentials).subscribe(
       data => {
@@ -40,14 +40,14 @@ export class LoginPageComponent implements OnInit {
         this.usertoken.userId = data.userId;
         console.log(this.usertoken);
         LoginService.setToken(this.usertoken.authToken);
-        this.token = this.usertoken.authToken;
-        this.validate(this.token);
+        console.log(LoginService.token);
+        this.validate(LoginService.token);
       },
       error => console.log(error));
   }
 
-  
-  validate(token:String) {
+
+  validate(token: String) {
     this.loginservice.validate(token).subscribe(
       data => {
         this.jwt = <JwtReponse>data;
@@ -58,8 +58,19 @@ export class LoginPageComponent implements OnInit {
       },
       error => console.log(error));
   }
+  
   gotoHomePage() {
     this.router.navigate(['/home']);
+  }
+
+  check(token: String) {
+    this.loginservice.check(token).subscribe(
+      data => {
+        if (data === true) {
+          this.gotoHomePage();
+        }
+      },
+      error => console.log(error));
   }
 
 }

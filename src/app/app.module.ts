@@ -12,6 +12,8 @@ import { NavDesignComponent } from './nav-design/nav-design.component';
 import { OrderMedicineComponent } from './order-medicine/order-medicine.component';
 import { SupplyTableComponent } from './supply-table/supply-table.component';
 import { DemandTableComponent } from './demand-table/demand-table.component';
+import { StockViewComponent } from './stock-view/stock-view.component';
+import { ExpiredSessionComponent } from './expired-session/expired-session.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { DemandTableComponent } from './demand-table/demand-table.component';
     NavDesignComponent,
     OrderMedicineComponent,
     SupplyTableComponent,
-    DemandTableComponent
+    DemandTableComponent,
+    StockViewComponent,
+    ExpiredSessionComponent
   ],
   imports: [
     BrowserModule,

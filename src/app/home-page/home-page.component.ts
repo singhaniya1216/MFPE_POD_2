@@ -10,10 +10,7 @@ import { LoginService } from '../login.service';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(appcomp:AppComponent, router:Router) {
-    if((LoginService.token == null) || (LoginService.token == "")){
-      router.navigate(['/login']);
-    }
+  constructor(private router:Router,private loginservice:LoginService) {
    }
 
   ngOnInit(): void {

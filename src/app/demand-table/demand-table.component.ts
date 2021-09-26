@@ -16,7 +16,23 @@ export class DemandTableComponent implements OnInit {
   constructor(private loginservice: LoginService, private router: Router) { }
 
   ngOnInit(): void {
+    this.check(LoginService.token);
     this.demanded();
+  }
+
+  gotoLoginPage() {
+    this.router.navigate(['/expired']);
+  }
+
+  check(token:String){
+    this.loginservice.check(token).subscribe(
+      data =>{
+        if(!data)
+        {
+          this.gotoLoginPage();
+        }
+      },
+      error => console.log(error));
   }
 
   demanded(){

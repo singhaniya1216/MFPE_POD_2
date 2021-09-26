@@ -11,31 +11,22 @@
         <form (ngSubmit)="onSubmit()">
             <div class="container py-5">
                 <div class="row">
-                    <div class="col-lg-12 mx-auto bg-white rounded shadow">
+                    <div class="col-lg-7 mx-auto bg-white rounded shadow my-auto">
 
                         <!-- Fixed header table-->
-                        <div class="table-responsive">
-                            <table class="table table-hover table-bordered table-light" style="border-color:black;">
+                        <div class="table-responsive" style="padding-top: 12px;">
+                            <table class="table table-hover table-bordered table-striped bg-light rounded"
+                                style="border-color:black;">
                                 <thead>
-                                    <tr>
-                                        <th scope="col" class="col-2">Medicine Name</th>
-                                        <th scope="col" class="col-3">Chemical Composition</th>
-                                        <th scope="col" class="col-2">Targer Ailment</th>
-                                        <th scope="col" class="col-2">Date of Expiry</th>
-                                        <th scope="col" class="col-0">In Stock</th>
-                                        <th scope="col" class="col-2">Pharmacy Name</th>
-                                        <th scope="col" class="col-1">Order Amount</th>
+                                    <tr class=" text-center bg-secondary text-white">
+                                        <th scope="col" class="col-3">Medicine Name</th>
+                                        <th scope="col" class="col-2">Order Amount</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr *ngFor="let medicine of medicines">
-                                        <td class="col-2">{{medicine.name}}</td>
-                                        <td class="col-3">{{medicine.chemicalComposition}}</td>
-                                        <td class="col-2">{{medicine.targetAilment}}</td>
-                                        <td class="col-2">{{medicine.dateOfExpiry}}</td>
-                                        <td class="col-0">{{medicine.numberOfTabletsInStock}}</td>
-                                        <td class="col-2">{{medicine.pharmacyName}}</td>
-                                        <td class="col-1"><input type="number" id="amount" name="amount"
+                                        <td class="col-3">{{medicine.name}}</td>
+                                        <td class="col-2"><input type="number" id="amount" name="amount"
                                                 max="{{medicine.numberOfTabletsInStock}}" min=0
                                                 [(ngModel)]="medicine.amount"
                                                 class="form-control border border-secondary" required></td>
@@ -73,10 +64,11 @@
                 <div class="col-lg-12 mx-auto bg-white rounded shadow">
 
                     <!-- Fixed header table-->
-                    <div class="table-responsive">
-                        <table class="table table-hover table-light">
+                    <div class="table-responsive" style="padding-top: 12px;">
+                        <table class="table table-hover table-bordered table-striped bg-light rounded"
+                            style="border-color:black;">
                             <thead>
-                                <tr>
+                                <tr class=" text-center bg-secondary text-white">
                                     <th scope="col" class="col-3">Pharmacy Name</th>
                                     <th scope="col" class="col-3">Medicine Name</th>
                                     <th scope="col" class="col-2">Ordered Amount</th>

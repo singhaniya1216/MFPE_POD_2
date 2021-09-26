@@ -7,3 +7,7 @@
 .navbar .container-fluid> a:hover, .navbar > a:focus {
     transform: scale(1.2);
 }
+
+button:hover{
+    transform: scale(1.2);
+}

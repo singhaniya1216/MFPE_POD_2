@@ -17,7 +17,7 @@ export class LoginService {
   private baseURL = 'http://localhost:8083/api/portal';
   constructor(private httpClient: HttpClient) { }
 
-  static token: String = "";
+  static token: String;
 
   static setToken(tk:String){
     this.token = tk;
@@ -57,5 +57,10 @@ export class LoginService {
   demandT(token:String){
     const headers = new HttpHeaders().set('Authorization', "Bearer "+token).set('Access-Control-Allow-Origin', '*');
     return this.httpClient.get<Demand[]>(`${this.baseURL}/getMedicineDemand`,{headers});
+  }
+  
+  check(token:String){
+    const headers = new HttpHeaders().set('Authorization', "Bearer "+token).set('Access-Control-Allow-Origin', '*');
+    return this.httpClient.get<Boolean>(`${this.baseURL}/check`,{headers});
   }
 }

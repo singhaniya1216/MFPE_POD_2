@@ -25,6 +25,22 @@ constructor(private loginservice: LoginService, private router: Router) {
 }
 
 ngOnInit(): void {
+  this.check(LoginService.token);
+}
+
+gotoLoginPage() {
+  this.router.navigate(['/expired']);
+}
+
+check(token:String){
+  this.loginservice.check(token).subscribe(
+    data =>{
+      if(data === false)
+      {
+        this.gotoLoginPage();
+      }
+    },
+    error => console.log(error));
 }
 
 onSubmit(form: any){

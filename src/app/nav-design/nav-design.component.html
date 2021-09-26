@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white" style="padding: 0; opacity: 90%;">
     <div class="container-fluid">
-        <a class="navbar-brand" routerLink="/login" style="margin-left: 20px;">
-            <img src="assets/images/Untitled-1.png" height="70" />
+        <a class="navbar-brand" routerLink="/home" style="margin-left: 20px;">
+            <img src="assets/images/Untitled-1.png" height="60" />
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,10 +11,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item" style="margin-left: 20px;">
-                    <a class="nav-link" routerLink="/login"><strong>Home</strong></a>
-                </li>
-                <li class="nav-item" style="margin-left: 20px;">
-                    <a class="nav-link" routerLink="/RepSchedule"><strong>Represtative Schedule</strong></a>
+                    <a class="nav-link" routerLink="/RepSchedule"><strong>M R Schedule</strong></a>
                 </li>
                 <li class="nav-item" style="margin-left: 20px;">
                     <a class="nav-link" routerLink="/Demand"><strong>Medicine Demand</strong></a>
@@ -25,14 +22,16 @@
                 <li class="nav-item" style="margin-left: 20px;">
                     <a class="nav-link" routerLink="/OrderMedicine"><strong>Order Medicine</strong></a>
                 </li>
+                <li class="nav-item" style="margin-left: 20px;">
+                    <a class="nav-link" routerLink="/Stock"><strong>Medicine Stock</strong></a>
+                </li>
             </ul>
         </div>
-        <!--<ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right">
             <li class="nav-item">
-                <a class="nav-link" routerLink="/cart" style="margin-right: 20px;">
-                    <i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>
-                </a>
+                <button class="nav-link btn btn-primary text-uppercase" routerLink="/login"><strong
+                        style="color: white; margin-right: 7px; margin-left: 7px;">Login </strong></button>
             </li>
-        </ul>-->
+        </ul>
     </div>
 </nav>
