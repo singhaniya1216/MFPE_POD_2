@@ -15,6 +15,7 @@ import { DemandTableComponent } from './demand-table/demand-table.component';
 import { StockViewComponent } from './stock-view/stock-view.component';
 import { ExpiredSessionComponent } from './expired-session/expired-session.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     SupplyTableComponent,
     DemandTableComponent,
     StockViewComponent,
-    ExpiredSessionComponent
+    ExpiredSessionComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

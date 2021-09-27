@@ -29,8 +29,8 @@
         </div>
         <ul class="nav navbar-nav navbar-right">
             <li class="nav-item">
-                <button class="nav-link btn btn-primary text-uppercase" routerLink="/login"><strong
-                        style="color: white; margin-right: 7px; margin-left: 7px;">Login </strong></button>
+                <button class="nav-link btn btn-primary text-uppercase" (click)="getChecked()" routerLink="{{link}}"><strong
+                        style="color: white; margin-right: 7px; margin-left: 7px;">{{text}} </strong></button>
             </li>
         </ul>
     </div>
