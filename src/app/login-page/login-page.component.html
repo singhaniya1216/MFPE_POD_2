@@ -1,49 +1,90 @@
-<div class="container-fluid">
-    <div class="row no-gutter">
-        <!-- The image half -->
-        <div class="col-md-6 d-none d-md-flex bg-image"></div>
+<body>
+    <app-nav-design></app-nav-design>
 
-
-        <!-- The content half -->
-        <div class="col-md-6 bg-light">
-            <div class="login d-flex align-items-center py-5">
-
-                <!-- Demo content-->
-                <div class="container bodyu">
-                    <div class="row">
-                        <div class="col-lg-10 col-xl-7 mx-auto">
-                            <h3 class="display-4">Login!</h3>
-                            <p class="text-muted mb-4">Pharmacy Supply Portal</p>
-                            <div [hidden]="!error"
-                                        class="alert alert-danger">
-                                        Invalid User Id or Password</div>
-                            <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
-                                <div class="form-group mb-3">
-                                    <input id="userid" name="userid" ngModel type="text" placeholder="User ID"
-                                        class="form-control rounded-pill border-info shadow-sm px-4 py-4" #userid="ngModel"
-                                        required>
-                                    <div [hidden]="userid.valid || userid.pristine"
-                                        class="alert alert-danger rounded-pill">
-                                        User ID Required</div>
-                                </div>
-                                <div class="form-group mb-3">
-                                    <input id="password" name="password" ngModel type="password" placeholder="Password"
-                                        class="form-control rounded-pill border-info shadow-sm px-4 py-4 text-primary"
-                                        #password="ngModel" required>
-                                    <div [hidden]="password.valid || password.pristine"
-                                        class="alert alert-danger rounded-pill">
-                                        Password Required</div>
-                                </div>
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
+        <div class="py-5">
+            <div class="container">
+                <div class="row text-center">
+                    <!-- Team item-->
+                    <div class="col-xl-5 mx-auto col-sm-8 mb-4">
+                        <div class="bg-white rounded shadow-lg py-5 px-5" >
+                            <h6 class="msg-info py-3">Please login to your account</h6>
+                            <div [hidden]="!error" class="alert alert-danger rounded-pill">
+                                Invalid User Id or Password</div>
+                            <div class="form-group">
+                                <label class="form-control-label text-muted">User ID</label>
+                                <input id="userid" name="userid" ngModel type="text" placeholder="User ID"
+                                    class="form-control rounded-pill border-info shadow-sm px-4 py-4" #userid="ngModel"
+                                    required>
+                                <div [hidden]="userid.valid || userid.pristine" class="alert alert-danger rounded-pill" style="margin-top: 5px;">
+                                    User ID Required</div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label text-muted">Password</label>
+                                <input id="password" name="password" ngModel type="password" placeholder="Password"
+                                    class="form-control rounded-pill border-info shadow-sm px-4 py-4 text-primary"
+                                    #password="ngModel" required>
+                                <div [hidden]="password.valid || password.pristine"
+                                    class="alert alert-danger rounded-pill" style="margin-top: 5px;">
+                                    Password Required</div>
+                            </div>
+                            <div class="row justify-content-center my-3 px-3">
                                 <button type="submit" [disabled]="!loginForm.form.valid"
                                     class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Sign
                                     in</button>
-                            </form>
+                            </div>
+                            <div class="row justify-content-center my-2">
+                                <a href="/login"><small class="text-muted">Forgot Password?</small></a>
+                            </div>
+                            <ul class="social mb-0 list-inline mt-3">
+                                <li class="list-inline-item"><a class="social-link"><i class="fab fa-facebook"></i></a>
+                                </li>
+                                <li class="list-inline-item"><a class="social-link"><i class="fab fa-twitter"></i></a>
+                                </li>
+                                <li class="list-inline-item"><a class="social-link"><i class="fab fa-instagram"></i></a>
+                                </li>
+                                <li class="list-inline-item"><a class="social-link"><i class="fab fa-linkedin"></i></a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                </div><!-- End -->
-
+                    <!-- End-->
+                </div>
             </div>
-        </div><!-- End -->
+        </div>
+    </form>
 
+
+
+
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div [hidden]="!error" class="alert alert-danger">
+                        Invalid User Id or Password</div>
+                    
+                        <h1>Login</h1>
+                        <p class="text-muted"> Please enter your User ID and Password!</p>
+
+                        
+                        <a class="forgot text-muted">Forgot password?</a>
+                        
+                        <div class="col-md-12">
+                            <ul class="social-network social-circle">
+                                <li><a class="icoFacebook" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a class="icoTwitter" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                                <li><a class="icoGoogle" title="Google +"><i class="fab fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>-->
+</body>
+<footer class="py-2 bg-white" style="opacity: 0.7;">
+    <div class="container px-4 px-lg-5">
+        <p class="m-0 text-center text-black">Copyright &copy; POD-2 2021</p>
     </div>
-</div>
+</footer>

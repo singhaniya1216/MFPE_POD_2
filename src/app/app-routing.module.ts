@@ -10,6 +10,7 @@ import { DemandTableComponent } from './demand-table/demand-table.component';
 import { StockViewComponent } from './stock-view/stock-view.component';
 import { ExpiredSessionComponent } from './expired-session/expired-session.component';
 import { LogoutComponent } from './logout/logout.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 const routes: 
@@ -22,7 +23,8 @@ Routes = [{path:'login', component:LoginPageComponent},
 {path:'Demand', component:DemandTableComponent},
 {path:'Stock', component:StockViewComponent},
 {path:'expired', component:ExpiredSessionComponent},
-{path:'logout', component:LogoutComponent}
+{path:'logout', component:LogoutComponent},
+{path:'AboutUs', component:AboutUsComponent}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -2,21 +2,20 @@
     <app-nav-design></app-nav-design>
     <div class="container text-center text-white">
         <div class="row pt-5">
-            <div class="col-lg-8 mx-auto">
+            <div class="col-lg-12 mx-auto">
                 <h1 class="display-4"><strong>Medicines Supplied</strong></h1>
+                </div>
             </div>
         </div>
-    </div><!-- End -->
     <div class="container py-5">
         <div class="row">
-            <div class="col-lg-9 mx-auto bg-white rounded shadow">
+            <div class="col-lg-10 mx-auto bg-white rounded shadow">
 
                 <!-- Fixed header table-->
-                <div class="table-responsive" style="padding-top: 12px;">
-                    <table class="table table-hover table-bordered table-striped bg-light rounded"
-                        style="border-color:black;">
+                <div class="table-responsive table-hover rounded" style="padding-top: 12px;">
+                    <table class="table table-bordered">
                         <thead>
-                            <tr class=" text-center bg-secondary text-white">
+                            <tr class="text-white" style="background: linear-gradient(to right , #ACB6E5,#74ebd5);">
                                 <th scope="col" class="col-3">Pharmacy Name</th>
                                 <th scope="col" class="col-3">Medicine Name</th>
                                 <th scope="col" class="col-2">Ordered Amount</th>
@@ -24,7 +23,7 @@
                         </thead>
                         <tbody>
                             <tr *ngFor="let product of supply">
-                                <td class="col-3">{{product.pharmacyName}}</td>
+                                <td scope="row" class="col-3">{{product.pharmacyName}}</td>
                                 <td class="col-3">{{product.medicineName}}</td>
                                 <td class="col-2">{{product.supplyCount}}</td>
                             </tr>

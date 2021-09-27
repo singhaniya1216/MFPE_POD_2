@@ -11,19 +11,22 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngbCollapse]="isCollapsed">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item" style="margin-left: 20px;">
-                    <a class="nav-link" routerLink="/RepSchedule"><strong>M R Schedule</strong></a>
-                </li>
-                <li class="nav-item" style="margin-left: 20px;">
-                    <a class="nav-link" routerLink="/Demand"><strong>Medicine Demand</strong></a>
-                </li>
-                <li class="nav-item" style="margin-left: 20px;">
-                    <a class="nav-link" routerLink="/Supply"><strong>Medicine Supply</strong></a>
-                </li>
-                <li class="nav-item" style="margin-left: 20px;">
-                    <a class="nav-link" routerLink="/OrderMedicine"><strong>Order Medicine</strong></a>
+                    <a class="nav-link" routerLink="/AboutUs"><strong>About Us</strong></a>
                 </li>
                 <li class="nav-item" style="margin-left: 20px;">
                     <a class="nav-link" routerLink="/Stock"><strong>Medicine Stock</strong></a>
+                </li>
+                <li [hidden]="isLoginbutton" class="nav-item" style="margin-left: 20px;">
+                    <a class="nav-link" routerLink="/RepSchedule"><strong>M R Schedule</strong></a>
+                </li>
+                <li [hidden]="isLoginbutton" class="nav-item" style="margin-left: 20px;">
+                    <a class="nav-link" routerLink="/Demand"><strong>Medicine Demand</strong></a>
+                </li>
+                <li [hidden]="isLoginbutton" class="nav-item" style="margin-left: 20px;">
+                    <a class="nav-link" routerLink="/Supply"><strong>Medicine Supply</strong></a>
+                </li>
+                <li [hidden]="isLoginbutton" class="nav-item" style="margin-left: 20px;">
+                    <a class="nav-link" routerLink="/OrderMedicine"><strong>Order Medicine</strong></a>
                 </li>
             </ul>
         </div>

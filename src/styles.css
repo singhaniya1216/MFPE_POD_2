@@ -4,9 +4,12 @@
 @import url('https://use.fontawesome.com/releases/v5.7.0/css/all.css');
 
 body {
-    background: linear-gradient(to right, #ff7e00
+   /* background: linear-gradient(to right, #ff7e00
     , #8cc63e
-    );
+    );*/
+    background: #74ebd5;
+    background: -webkit-linear-gradient(to right, #74ebd5, #ACB6E5);
+    background: linear-gradient(to right, #74ebd5, #ACB6E5);
     min-height: 100vh;
     width:100%;
 }
@@ -17,4 +20,11 @@ strong {
 }
 footer{
     vertical-align: bottom;
+}
+th{
+    color: #490b70;
+}
+
+i{
+    color: #490b70;
 }

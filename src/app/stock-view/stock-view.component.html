@@ -1,19 +1,78 @@
+
 <body>
     <app-nav-design></app-nav-design>
-
-    <div class="container text-center text-white">
-        <div class="row pt-5">
-            <div class="col-lg-12 mx-auto">
-                <h1 class="display-4"><strong>Medicine Details and Stock Available</strong></h1>
+    <!-- For demo purpose -->
+<div class="container text-center text-white">
+    <div class="row pt-5">
+        <div class="col-lg-12 mx-auto">
+            <h1 class="display-4"><strong>Medicine Details and Stock Available</strong></h1>
             </div>
         </div>
     </div><!-- End -->
+
 
     <div class="container py-5">
         <div class="row">
             <div class="col-lg-12 mx-auto bg-white rounded shadow">
 
                 <!-- Fixed header table-->
+                <div class="table-responsive table-hover rounded" style="padding-top: 12px;">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr class="text-white" style="background: linear-gradient(to right , #ACB6E5,#74ebd5);">
+                                <th scope="col" class="col-2">Medicine Name</th>
+                                <th scope="col" class="col-4">Chemical Composition</th>
+                                <th scope="col" class="col-2">Targer Ailment</th>
+                                <th scope="col" class="col-2">Date of Expiry</th>
+                                <th scope="col" class="col-1">In Stock</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let medicine of medicines">
+                                <td scope="row" class="col-2">{{medicine.name}}</td>
+                                <td class="col-4">{{medicine.chemicalComposition}}</td>
+                                <td class="col-2">{{medicine.targetAilment}}</td>
+                                <td class="col-2">{{medicine.dateOfExpiry}}</td>
+                                <td class="col-1">{{medicine.numberOfTabletsInStock}}</td>
+                            </tr> 
+                        </tbody>
+                    </table>
+                </div><!-- End -->
+                
+            </div>
+        </div>
+    </div>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!---  <div class="container text-center text-white">
+        <div class="row pt-5">
+            <div class="col-lg-12 mx-auto">
+                <h1 class="display-4"><strong>Medicine Details and Stock Available</strong></h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-12 mx-auto bg-white rounded shadow">
+
+                
                 <div class="table-responsive" style="padding-top: 12px;">
                     <table class="table table-hover table-bordered table-striped bg-light rounded"
                         style="border-color:black;">
@@ -27,22 +86,22 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let medicine of medicines">
+                          <tr *ngFor="let medicine of medicines">
                                 <td class="col-2">{{medicine.name}}</td>
                                 <td class="col-4">{{medicine.chemicalComposition}}</td>
                                 <td class="col-2">{{medicine.targetAilment}}</td>
                                 <td class="col-2">{{medicine.dateOfExpiry}}</td>
                                 <td class="col-1">{{medicine.numberOfTabletsInStock}}</td>
-                            </tr>
+                            </tr>  
                         </tbody>
 
                     </table>
-                </div><!-- End -->
+                </div>
 
             </div>
         </div>
 
-    </div>
+    </div> -->
 
 </body>
 <footer class="py-2 bg-white" style="opacity: 0.7;">
