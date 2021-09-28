@@ -18,6 +18,7 @@
                         <div class="form-group">
                             <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker">
                                 <input ngModel  type="text" onblur="(this.type='text')" onfocus="(this.type='date')" placeholder="Choose a date for Schedule" min="{{minDate|date:'yyyy-MM-dd'}}"
+                                max="{{maxDate|date:'yyyy-MM-dd'}}"
                                     class="form-control py-4 px-4" id="scheduleDate" name="scheduleDate" #scheduleDate="ngModel" required>
                             </div>
                             <div [hidden]="scheduleDate.valid || scheduleDate.pristine" style="margin: 10px;" class="alert alert-danger">
@@ -53,21 +54,21 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr class="text-white" style="background: linear-gradient(to right , #ACB6E5,#74ebd5);">
-                                    <th scope="col" class="col-1">Rep Name</th>
+                                    <th scope="col" class="col-2">Rep Name</th>
                                     <th scope="col" class="col-1">Doctor Name</th>
                                     <th scope="col" class="col-2">Treating Ailment</th>
-                                    <th scope="col" class="col-3">Medicine</th>
+                                    <th scope="col" class="col-2">Medicine</th>
                                     <th scope="col" class="col-2">Slot</th>
-                                    <th scope="col" class="col-1">Date</th>
+                                    <th scope="col" class="col-2">Date</th>
                                     <th scope="col" class="col-2">Doctor Contact</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr *ngFor="let product of repSchs">
-                                    <td scope="row" class="col-1">{{product.repName}}</td>
+                                    <td scope="row" class="col-2">{{product.repName}}</td>
                                     <td class="col-1">{{product.doctorName}}</td>
                                     <td class="col-2">{{product.treatingAilment}}</td>
-                                    <td class="col-3">{{product.medicines}}</td>
+                                    <td class="col-2">{{product.medicines}}</td>
                                     <td class="col-2">{{product.meetingSlot}}</td>
                                     <td class="col-2">{{product.meetingDate}}</td>
                                     <td class="col-2">{{product.doctorContactNumber}}</td>

@@ -4,9 +4,9 @@
         <div class="row pt-5">
             <div class="col-lg-12 mx-auto">
                 <h1 class="display-4"><strong>Medicines Demanded</strong></h1>
-                </div>
             </div>
         </div>
+    </div>
     <div class="container py-5">
         <div class="row">
             <div class="col-lg-7 mx-auto bg-white rounded shadow">
@@ -16,26 +16,26 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr class="text-white" style="background: linear-gradient(to right , #ACB6E5,#74ebd5);">
-                            <th scope="col" class="col-3">Medicine Name</th>
-                            <th scope="col" class="col-2">Requested Amount</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let product of demand">
-                            <td class="col-3">{{product.medicineName}}</td>
-                            <td class="col-2">{{product.demandCount}}</td>
-                        </tr>
-                    </tbody>
+                                <th scope="col" class="col-3">Medicine Name</th>
+                                <th scope="col" class="col-2">Requested Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let product of demand">
+                                <td class="col-3">{{product.medicineName}}</td>
+                                <td class="col-2">{{product.demandCount}}</td>
+                            </tr>
+                        </tbody>
 
-                </table>
-            </div><!-- End -->
+                    </table>
+                </div><!-- End -->
 
+            </div>
+        </div>
+        <div class="container py-4 text-white text-lg-center">
+            <button routerLink="/home" class="btn btn-primary text-uppercase btn-lg">Home</button>
         </div>
     </div>
-    <div class="container py-4 text-white text-lg-center">
-        <button routerLink="/home" class="btn btn-primary text-uppercase btn-lg">Home</button>
-    </div>
-</div>
 </body>
 <footer class="py-2 bg-white" style="opacity: 0.7;">
     <div class="container px-4 px-lg-5">

@@ -1,13 +1,12 @@
 <body>
     <app-nav-design></app-nav-design>
-
     <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
         <div class="py-5">
             <div class="container">
                 <div class="row text-center">
                     <!-- Team item-->
                     <div class="col-xl-5 mx-auto col-sm-8 mb-4">
-                        <div class="bg-white rounded shadow-lg py-5 px-5" >
+                        <div class="bg-white rounded shadow-lg py-5 px-5">
                             <h6 class="msg-info py-3">Please login to your account</h6>
                             <div [hidden]="!error" class="alert alert-danger rounded-pill">
                                 Invalid User Id or Password</div>
@@ -16,7 +15,8 @@
                                 <input id="userid" name="userid" ngModel type="text" placeholder="User ID"
                                     class="form-control rounded-pill border-info shadow-sm px-4 py-4" #userid="ngModel"
                                     required>
-                                <div [hidden]="userid.valid || userid.pristine" class="alert alert-danger rounded-pill" style="margin-top: 5px;">
+                                <div [hidden]="userid.valid || userid.pristine" class="alert alert-danger rounded-pill"
+                                    style="margin-top: 5px;">
                                     User ID Required</div>
                             </div>
                             <div class="form-group">
@@ -53,35 +53,6 @@
             </div>
         </div>
     </form>
-
-
-
-
-    <!-- <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card">
-                    <div [hidden]="!error" class="alert alert-danger">
-                        Invalid User Id or Password</div>
-                    
-                        <h1>Login</h1>
-                        <p class="text-muted"> Please enter your User ID and Password!</p>
-
-                        
-                        <a class="forgot text-muted">Forgot password?</a>
-                        
-                        <div class="col-md-12">
-                            <ul class="social-network social-circle">
-                                <li><a class="icoFacebook" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a class="icoTwitter" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                                <li><a class="icoGoogle" title="Google +"><i class="fab fa-google-plus"></i></a></li>
-                            </ul>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>-->
 </body>
 <footer class="py-2 bg-white" style="opacity: 0.7;">
     <div class="container px-4 px-lg-5">
